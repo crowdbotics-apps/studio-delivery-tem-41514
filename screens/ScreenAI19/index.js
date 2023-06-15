@@ -35,7 +35,7 @@ const ShoppingCartScreen = () => {
       <Pressable><Image source={{
         uri: item.image
       }} style={styles.itemImage} /></Pressable>
-      <Text style={styles.itemName}>{item.name}</Text>
+      <Pressable><Text style={styles.itemName}>{item.name}</Text></Pressable>
       <View style={styles.quantityContainer}>
         <TouchableOpacity onPress={() => updateQuantity(item.id, 'decrease')} disabled={item.quantity === 1}>
           <Text style={styles.quantityButton}>-</Text>
