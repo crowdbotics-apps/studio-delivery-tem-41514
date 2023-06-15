@@ -36,7 +36,9 @@ const App = () => {
         }}><Text style={styles.buttonText}>Search</Text></Pressable>
         </TouchableOpacity>
         <TouchableOpacity style={styles.button}>
-          <Text style={styles.buttonText}>Maps</Text>
+          <Pressable onPress={() => {
+          navigation.navigate("ScreenAI21");
+        }}><Text style={styles.buttonText}>Maps</Text></Pressable>
         </TouchableOpacity>
       </View>
     </View>;

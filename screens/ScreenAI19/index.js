@@ -1,3 +1,4 @@
+import { Pressable } from "react-native";
 import React, { useState } from 'react';
 import { View, Text, Image, TextInput, TouchableOpacity, FlatList, StyleSheet } from 'react-native';
 
@@ -31,9 +32,9 @@ const ShoppingCartScreen = () => {
   const renderItem = ({
     item
   }) => <View style={styles.itemContainer}>
-      <Image source={{
-      uri: item.image
-    }} style={styles.itemImage} />
+      <Pressable><Image source={{
+        uri: item.image
+      }} style={styles.itemImage} /></Pressable>
       <Text style={styles.itemName}>{item.name}</Text>
       <View style={styles.quantityContainer}>
         <TouchableOpacity onPress={() => updateQuantity(item.id, 'decrease')} disabled={item.quantity === 1}>
