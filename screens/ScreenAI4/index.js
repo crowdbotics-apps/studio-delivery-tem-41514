@@ -20,13 +20,17 @@ const SignUpScreen = () => {
         </TouchableOpacity>
         <Text style={styles.checkboxText}>
           I agree to the{' '}
-          <Text style={styles.link} onPress={() => {}}>
+          <Pressable onPress={() => {
+          navigation.navigate("ScreenAI6");
+        }}><Text style={styles.link} onPress={() => {}}>
             Terms and Conditions
-          </Text>{' '}
+          </Text></Pressable>{' '}
           and{' '}
-          <Text style={styles.link} onPress={() => {}}>
+          <Pressable onPress={() => {
+          navigation.navigate("ScreenAI7");
+        }}><Text style={styles.link} onPress={() => {}}>
             Privacy Policy
-          </Text>
+          </Text></Pressable>
         </Text>
       </View>
       <TouchableOpacity style={styles.button}>
