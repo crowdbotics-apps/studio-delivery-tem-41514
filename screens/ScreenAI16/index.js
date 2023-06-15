@@ -10,9 +10,11 @@ const App = () => {
         <Image style={styles.icon} source={{
         uri: 'https://tinyurl.com/42evm3m3'
       }} />
-        <Image style={styles.icon} source={{
-        uri: 'https://tinyurl.com/42evm3m3'
-      }} />
+        <Pressable onPress={() => {
+        navigation.navigate("ScreenAI19");
+      }}><Image style={styles.icon} source={{
+          uri: 'https://tinyurl.com/42evm3m3'
+        }} /></Pressable>
         <Image style={styles.icon} source={{
         uri: 'https://tinyurl.com/42evm3m3'
       }} />
