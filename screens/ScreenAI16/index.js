@@ -7,9 +7,11 @@ const App = () => {
   const navigation = useNavigation();
   return <View style={styles.container}>
       <View style={styles.header}>
-        <Image style={styles.icon} source={{
-        uri: 'https://tinyurl.com/42evm3m3'
-      }} />
+        <Pressable onPress={() => {
+        navigation.navigate("ScreenAI23");
+      }}><Image style={styles.icon} source={{
+          uri: 'https://tinyurl.com/42evm3m3'
+        }} /></Pressable>
         <Pressable onPress={() => {
         navigation.navigate("ScreenAI19");
       }}><Image style={styles.icon} source={{
