@@ -1,11 +1,16 @@
+import { useNavigation } from "@react-navigation/native";
+import { Pressable } from "react-native";
 import React from 'react';
 import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 
 const OrderCompletedScreen = () => {
+  const navigation = useNavigation();
   return <View style={styles.container}>
       <Text style={styles.message}>The order is completed</Text>
       <TouchableOpacity style={styles.button} onPress={() => {}}>
-        <Text style={styles.buttonText}>OK</Text>
+        <Pressable onPress={() => {
+        navigation.navigate("ScreenAI24");
+      }}><Text style={styles.buttonText}>OK</Text></Pressable>
       </TouchableOpacity>
     </View>;
 };

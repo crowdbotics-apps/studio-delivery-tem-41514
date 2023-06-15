@@ -1,7 +1,10 @@
+import { useNavigation } from "@react-navigation/native";
+import { Pressable } from "react-native";
 import React, { useState } from 'react';
 import { View, Text, StyleSheet, TouchableOpacity, Image, FlatList } from 'react-native';
 
 const PaymentScreen = () => {
+  const navigation = useNavigation();
   const [selectedPayment, setSelectedPayment] = useState(null);
   const paymentOptions = [{
     id: 'googlePay',
@@ -40,7 +43,9 @@ const PaymentScreen = () => {
       <Text style={styles.title}>Select Payment Method</Text>
       <FlatList data={creditCards} renderItem={renderItem} keyExtractor={item => item.id} horizontal showsHorizontalScrollIndicator={false} />
       <TouchableOpacity style={styles.addButton}>
-        <Text style={styles.addButtonText}>Add New Card</Text>
+        <Pressable onPress={() => {
+        navigation.navigate("ScreenAI25");
+      }}><Text style={styles.addButtonText}>Add New Card</Text></Pressable>
       </TouchableOpacity>
       <View style={styles.optionsContainer}>
         {paymentOptions.map(option => <TouchableOpacity key={option.id} style={[styles.option, {
