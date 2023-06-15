@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { View, Text, TouchableOpacity, TextInput, FlatList, StyleSheet, Image, CheckBox } from 'react-native';
+import React, { useState } from "react";
+import { View, Text, TouchableOpacity, TextInput, FlatList, StyleSheet, Image, CheckBox } from "react-native";
 
 const DishItem = ({
   dish,
@@ -16,9 +16,12 @@ const DishItem = ({
   return <View style={styles.dishItem}>
       <CheckBox value={dish.checked} onValueChange={onCheck} />
       <Image source={{
-      uri: 'https://tinyurl.com/42evm3m3'
+      uri: "https://tinyurl.com/42evm3m3"
     }} style={styles.dishImage} />
-      <Text style={styles.dishName}>{dish.name}</Text>
+      <View style={styles.dishInfo}>
+        <Text style={styles.dishName}>{dish.name}</Text>
+        <Text style={styles.dishPrice}>${dish.price}</Text>
+      </View>
       <View style={styles.quantityContainer}>
         <TouchableOpacity onPress={() => handleQuantityChange(quantity - 1)}>
           <Text style={styles.quantityButton}>-</Text>
@@ -33,16 +36,19 @@ const DishItem = ({
 
 const App = () => {
   const [dishes, setDishes] = useState([{
-    id: '1',
-    name: 'Dish 1',
+    id: "1",
+    name: "Dish 1",
+    price: 10,
     checked: false
   }, {
-    id: '2',
-    name: 'Dish 2',
+    id: "2",
+    name: "Dish 2",
+    price: 15,
     checked: false
   }, {
-    id: '3',
-    name: 'Dish 3',
+    id: "3",
+    name: "Dish 3",
+    price: 12,
     checked: false
   }]);
 
@@ -71,12 +77,12 @@ const App = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: "#fff",
     paddingHorizontal: 10
   },
   dishItem: {
-    flexDirection: 'row',
-    alignItems: 'center',
+    flexDirection: "row",
+    alignItems: "center",
     marginBottom: 10
   },
   dishImage: {
@@ -85,13 +91,19 @@ const styles = StyleSheet.create({
     borderRadius: 25,
     marginRight: 10
   },
+  dishInfo: {
+    flex: 1
+  },
   dishName: {
-    flex: 1,
     fontSize: 16
   },
+  dishPrice: {
+    fontSize: 14,
+    color: "#888"
+  },
   quantityContainer: {
-    flexDirection: 'row',
-    alignItems: 'center'
+    flexDirection: "row",
+    alignItems: "center"
   },
   quantityButton: {
     fontSize: 20,
@@ -99,20 +111,20 @@ const styles = StyleSheet.create({
   },
   quantityInput: {
     width: 40,
-    textAlign: 'center',
-    borderColor: '#ccc',
+    textAlign: "center",
+    borderColor: "#ccc",
     borderWidth: 1,
     borderRadius: 5
   },
   orderButton: {
-    backgroundColor: '#4CAF50',
+    backgroundColor: "#4CAF50",
     padding: 15,
     borderRadius: 5,
-    alignItems: 'center',
+    alignItems: "center",
     marginTop: 20
   },
   orderButtonText: {
-    color: '#fff',
+    color: "#fff",
     fontSize: 18
   }
 });
