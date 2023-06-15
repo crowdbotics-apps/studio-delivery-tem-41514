@@ -29,7 +29,9 @@ const App = () => {
         }}><Text style={styles.buttonText}>Order History</Text></Pressable>
         </TouchableOpacity>
         <TouchableOpacity style={styles.button}>
-          <Text style={styles.buttonText}>Search</Text>
+          <Pressable onPress={() => {
+          navigation.navigate("ScreenAI17");
+        }}><Text style={styles.buttonText}>Search</Text></Pressable>
         </TouchableOpacity>
         <TouchableOpacity style={styles.button}>
           <Text style={styles.buttonText}>Maps</Text>
