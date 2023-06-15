@@ -1,7 +1,10 @@
+import { useNavigation } from "@react-navigation/native";
+import { Pressable } from "react-native";
 import React from 'react';
 import { View, Text, TouchableOpacity, Image, StyleSheet } from 'react-native';
 
 const App = () => {
+  const navigation = useNavigation();
   return <View style={styles.container}>
       <View style={styles.header}>
         <Image style={styles.icon} source={{
@@ -16,10 +19,14 @@ const App = () => {
       </View>
       <View style={styles.buttonsContainer}>
         <TouchableOpacity style={styles.button}>
-          <Text style={styles.buttonText}>Food order</Text>
+          <Pressable onPress={() => {
+          navigation.navigate("ScreenAI11");
+        }}><Text style={styles.buttonText}>Food order</Text></Pressable>
         </TouchableOpacity>
         <TouchableOpacity style={styles.button}>
-          <Text style={styles.buttonText}>Order History</Text>
+          <Pressable onPress={() => {
+          navigation.navigate("ScreenAI13");
+        }}><Text style={styles.buttonText}>Order History</Text></Pressable>
         </TouchableOpacity>
         <TouchableOpacity style={styles.button}>
           <Text style={styles.buttonText}>Search</Text>

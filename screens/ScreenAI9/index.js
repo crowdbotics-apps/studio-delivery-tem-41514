@@ -20,7 +20,9 @@ const UserProfileScreen = () => {
       <TextInput style={styles.input} onChangeText={setName} value={name} placeholder="Name" />
       <TextInput style={styles.input} onChangeText={setAddress} value={address} placeholder="Address" />
       <TouchableOpacity style={styles.nextButton} onPress={handleNext}>
-        <Text style={styles.nextButtonText}>Next</Text>
+        <Pressable onPress={() => {
+        navigation.navigate("ScreenAI16");
+      }}><Text style={styles.nextButtonText}>Next</Text></Pressable>
       </TouchableOpacity>
     </View>;
 };

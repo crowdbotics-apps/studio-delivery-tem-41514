@@ -1,3 +1,5 @@
+import { useNavigation } from "@react-navigation/native";
+import { Pressable } from "react-native";
 import React, { useState } from "react";
 import { View, Text, TouchableOpacity, TextInput, FlatList, StyleSheet, Image, CheckBox } from "react-native";
 
@@ -35,6 +37,7 @@ const DishItem = ({
 };
 
 const App = () => {
+  const navigation = useNavigation();
   const [dishes, setDishes] = useState([{
     id: "1",
     name: "Dish 1",
@@ -69,7 +72,9 @@ const App = () => {
       item
     }) => <DishItem dish={item} onQuantityChange={handleQuantityChange} onCheck={() => handleCheck(item.id)} />} keyExtractor={item => item.id} />
       <TouchableOpacity style={styles.orderButton}>
-        <Text style={styles.orderButtonText}>Order</Text>
+        <Pressable onPress={() => {
+        navigation.navigate("ScreenAI15");
+      }}><Text style={styles.orderButtonText}>Order</Text></Pressable>
       </TouchableOpacity>
     </View>;
 };

@@ -1,3 +1,5 @@
+import { useNavigation } from "@react-navigation/native";
+import { Pressable } from "react-native";
 import React from 'react';
 import { View, Text, FlatList, StyleSheet, TouchableOpacity, Image } from 'react-native';
 const orderedItems = [{
@@ -18,6 +20,7 @@ const orderedItems = [{
 }];
 
 const OrderScreen = () => {
+  const navigation = useNavigation();
   const totalPrice = orderedItems.reduce((total, item) => total + item.price * item.quantity, 0);
   return <View style={styles.container}>
       <FlatList data={orderedItems} renderItem={({
@@ -36,7 +39,9 @@ const OrderScreen = () => {
         <Text style={styles.totalText}>Total: ${totalPrice}</Text>
       </View>
       <TouchableOpacity style={styles.confirmButton}>
-        <Text style={styles.confirmButtonText}>Confirm Order</Text>
+        <Pressable onPress={() => {
+        navigation.navigate("ScreenAI12");
+      }}><Text style={styles.confirmButtonText}>Confirm Order</Text></Pressable>
       </TouchableOpacity>
     </View>;
 };
