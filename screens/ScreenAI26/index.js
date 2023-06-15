@@ -15,25 +15,39 @@ const SettingsScreen = () => {
       }}><Text style={styles.buttonText}>Edit Profile</Text></Pressable>
       </TouchableOpacity>
       <TouchableOpacity style={styles.button}>
-        <Text style={styles.buttonText}>Edit Payment</Text>
+        <Pressable onPress={() => {
+        navigation.navigate("ScreenAI25");
+      }}><Text style={styles.buttonText}>Edit Payment</Text></Pressable>
       </TouchableOpacity>
       <TouchableOpacity style={styles.button}>
-        <Text style={styles.buttonText}>Privacy Policy</Text>
+        <Pressable onPress={() => {
+        navigation.navigate("ScreenAI7");
+      }}><Text style={styles.buttonText}>Privacy Policy</Text></Pressable>
       </TouchableOpacity>
       <TouchableOpacity style={styles.button}>
-        <Text style={styles.buttonText}>Terms and Conditions</Text>
+        <Pressable onPress={() => {
+        navigation.navigate("ScreenAI6");
+      }}><Text style={styles.buttonText}>Terms and Conditions</Text></Pressable>
       </TouchableOpacity>
       <TouchableOpacity style={styles.button}>
-        <Text style={styles.buttonText}>Change Password</Text>
+        <Pressable onPress={() => {
+        navigation.navigate("ScreenAI28");
+      }}><Text style={styles.buttonText}>Change Password</Text></Pressable>
       </TouchableOpacity>
       <TouchableOpacity style={styles.button}>
-        <Text style={styles.buttonText}>Support / Send Feedback</Text>
+        <Pressable onPress={() => {
+        navigation.navigate("ScreenAI29");
+      }}><Text style={styles.buttonText}>Support / Send Feedback</Text></Pressable>
       </TouchableOpacity>
       <TouchableOpacity style={styles.button}>
-        <Text style={styles.buttonText}>Contact Us</Text>
+        <Pressable onPress={() => {
+        navigation.navigate("ScreenAI30");
+      }}><Text style={styles.buttonText}>Contact Us</Text></Pressable>
       </TouchableOpacity>
       <TouchableOpacity style={styles.button}>
-        <Text style={styles.buttonText}>Frequently Asked Questions</Text>
+        <Pressable onPress={() => {
+        navigation.navigate("ScreenAI31");
+      }}><Text style={styles.buttonText}>Frequently Asked Questions</Text></Pressable>
       </TouchableOpacity>
       <TouchableOpacity style={styles.button}>
         <Text style={styles.buttonText}>Delete Account</Text>
