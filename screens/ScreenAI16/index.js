@@ -41,7 +41,7 @@ const App = () => {
         </TouchableOpacity>
         <TouchableOpacity style={styles.button}>
           <Pressable onPress={() => {
-          navigation.navigate("ScreenAI21");
+          navigation.navigate("ScreenAI33");
         }}><Text style={styles.buttonText}>Maps</Text></Pressable>
         </TouchableOpacity>
       </View>
