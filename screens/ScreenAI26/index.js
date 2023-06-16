@@ -1,11 +1,14 @@
-import React from 'react';
-import { View, Text, TouchableOpacity, StyleSheet, Image, ScrollView } from 'react-native';
+import { useNavigation } from "@react-navigation/native";
+import { Pressable } from "react-native";
+import React from "react";
+import { View, Text, TouchableOpacity, StyleSheet, Image, ScrollView } from "react-native";
 
 const SettingsScreen = () => {
+  const navigation = useNavigation();
   return <ScrollView style={styles.container}>
       <View style={styles.header}>
         <Image style={styles.profileImage} source={{
-        uri: 'https://tinyurl.com/42evm3m3'
+        uri: "https://tinyurl.com/42evm3m3"
       }} />
         <Text style={styles.profileName}>John Doe</Text>
       </View>
@@ -40,6 +43,11 @@ const SettingsScreen = () => {
         <TouchableOpacity style={styles.button}>
           <Text style={styles.buttonText}>Log Out</Text>
         </TouchableOpacity>
+        <TouchableOpacity style={styles.button}>
+          <Pressable onPress={() => {
+          navigation.navigate("ScreenAI32");
+        }}><Text style={styles.buttonText}>Invite Friend</Text></Pressable>
+        </TouchableOpacity>
       </View>
     </ScrollView>;
 };
@@ -47,11 +55,11 @@ const SettingsScreen = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#F5F5F5'
+    backgroundColor: "#F5F5F5"
   },
   header: {
-    alignItems: 'center',
-    justifyContent: 'center',
+    alignItems: "center",
+    justifyContent: "center",
     paddingVertical: 20
   },
   profileImage: {
@@ -61,14 +69,14 @@ const styles = StyleSheet.create({
   },
   profileName: {
     fontSize: 18,
-    fontWeight: 'bold',
+    fontWeight: "bold",
     marginTop: 10
   },
   buttonsContainer: {
     paddingHorizontal: 20
   },
   button: {
-    backgroundColor: '#FFFFFF',
+    backgroundColor: "#FFFFFF",
     borderRadius: 10,
     paddingVertical: 15,
     paddingHorizontal: 20,
@@ -77,7 +85,7 @@ const styles = StyleSheet.create({
   },
   buttonText: {
     fontSize: 16,
-    fontWeight: '500'
+    fontWeight: "500"
   }
 });
 export default SettingsScreen;
