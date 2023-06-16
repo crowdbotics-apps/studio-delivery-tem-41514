@@ -12,7 +12,7 @@ const FeedbackScreen = () => {
   };
 
   return <View style={styles.container}>
-      <TextInput style={styles.input} placeholder="Write your feedback here..." multiline value={feedback} onChangeText={setFeedback} />
+      <TextInput style={styles.input} placeholder="Write your feedback here..." multiline numberOfLines={5} onChangeText={setFeedback} value={feedback} />
       <Button title="Send" onPress={sendFeedback} />
     </View>;
 };
@@ -29,8 +29,7 @@ const styles = StyleSheet.create({
     borderRadius: 5,
     padding: 10,
     marginBottom: 20,
-    textAlignVertical: 'top',
-    minHeight: 150
+    textAlignVertical: 'top'
   }
 });
 export default FeedbackScreen;
